@@ -17,7 +17,6 @@
       background-color: #f8f9fc;
       color: #333;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     header {
@@ -25,7 +24,24 @@
       color: #fff;
       padding: 2rem;
       text-align: center;
-      animation: fadeIn 1s ease-in-out;
+    }
+
+    nav {
+      background-color: #06172f;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     header img {
@@ -47,7 +63,6 @@
       padding: 3rem 1.5rem;
       max-width: 1000px;
       margin: auto;
-      animation: fadeInUp 1s ease-in-out;
     }
 
     .section-title {
@@ -57,7 +72,7 @@
       text-align: center;
     }
 
-    .services, .features {
+    .services, .features, .team, .blog-preview {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.5rem;
@@ -68,11 +83,13 @@
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    footer {
+      background-color: #0a1e40;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
     }
 
     form input, form textarea, form button {
@@ -90,37 +107,6 @@
       border: none;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    form button:hover {
-      background: #09203b;
-    }
-
-    footer {
-      background-color: #0a1e40;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      .section-title {
-        font-size: 1.4rem;
-      }
     }
   </style>
 </head>
@@ -131,35 +117,81 @@
     <p>Streamlining Revenue. Empowering Growth.</p>
   </header>
 
-  <section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#why">Why Dentastra</a>
+    <a href="#team">Team</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
     <h2 class="section-title">About Us</h2>
     <p>
-      Dentastra Solutions is a modern Dental RCM (Revenue Cycle Management) company focused on optimizing the financial performance of dental practices through strategic precision and smart technologies.
+      Dentastra Solutions is a next-gen Dental Revenue Cycle Management company, empowering dental practices with strategic support, precision processing, and real-time revenue insights. Our goal is to maximize efficiency while minimizing errors and delays in the RCM lifecycle.
     </p>
   </section>
 
-  <section>
+  <section id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services">
       <div class="card">Claims Management</div>
       <div class="card">Payment Posting</div>
       <div class="card">Insurance Verification</div>
       <div class="card">Patient Billing</div>
-      <div class="card">Accounts Receivable Follow-up</div>
+      <div class="card">AR Follow-Up</div>
+      <div class="card">Eligibility Checks</div>
+      <div class="card">Revenue Reporting</div>
     </div>
   </section>
 
-  <section>
+  <section id="why">
     <h2 class="section-title">Why Dentastra?</h2>
     <div class="features">
-      <div class="card">Precision & Compliance</div>
-      <div class="card">Strategic Reporting</div>
-      <div class="card">Faster Turnarounds</div>
-      <div class="card">Dedicated RCM Experts</div>
+      <div class="card">Strategic, Real-Time Analytics</div>
+      <div class="card">US Dental Industry Expertise</div>
+      <div class="card">HIPAA-Compliant Infrastructure</div>
+      <div class="card">Fast Turnaround Time</div>
     </div>
   </section>
 
-  <section>
+  <section id="team">
+    <h2 class="section-title">Meet Our Team</h2>
+    <div class="team">
+      <div class="card">
+        <strong>Mehul Fulan</strong><br>
+        Founder & CEO<br>
+        Dental RCM Strategist
+      </div>
+      <div class="card">
+        <strong>Priya Sharma</strong><br>
+        Operations Manager<br>
+        10+ years in dental billing
+      </div>
+      <div class="card">
+        <strong>Rahul Jain</strong><br>
+        Tech Lead<br>
+        Automation & RCM tools
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2 class="section-title">Insights & Blog</h2>
+    <div class="blog-preview">
+      <div class="card">
+        <strong>5 KPIs Every Dental Office Should Track</strong>
+        <p>Learn how to monitor the metrics that matter most in your revenue cycle.</p>
+      </div>
+      <div class="card">
+        <strong>Is Your Practice Losing Revenue to Eligibility Errors?</strong>
+        <p>Tips to optimize verification and pre-check workflows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name">
