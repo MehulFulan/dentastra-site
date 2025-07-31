@@ -6,247 +6,253 @@
   <title>Dentastra Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #0a1e40;
-      --secondary: #164b8c;
-      --light-bg: #f4f6fa;
-      --dark: #06172f;
-      --accent: #4ab0ff;
-    }
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
+
     body {
-      background: var(--light-bg);
-      color: #222;
+      background-color: #f0f4f8;
+      color: #333;
       line-height: 1.6;
     }
+
     header {
-      position: relative;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(to right, #001f3f, #003366);
       color: #fff;
+      padding: 3rem 1rem 2rem;
       text-align: center;
-      padding: 5rem 1rem;
-      overflow: hidden;
-    }
-    header::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://images.unsplash.com/photo-1587351028894-7c0c4f1c8e44?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      opacity: 0.25;
-      z-index: 0;
-    }
-    header > * {
       position: relative;
-      z-index: 1;
     }
+
     header img {
-      width: 120px;
+      width: 150px;
+      max-width: 90%;
       margin-bottom: 1rem;
-      border-radius: 50%;
-      border: 3px solid #fff;
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: #d1e0f0;
+    }
+
     nav {
-      background: var(--dark);
+      background-color: #002244;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
-      flex-wrap: wrap;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: color 0.3s ease;
     }
+
     nav a:hover {
-      background: var(--accent);
-      color: #000;
+      color: #00bcd4;
     }
+
     section {
-      padding: 4rem 1.5rem;
+      padding: 3rem 1.5rem;
       max-width: 1200px;
       margin: auto;
     }
+
     .section-title {
-      font-size: 2.2rem;
-      color: var(--primary);
-      margin-bottom: 2rem;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #002244;
       text-align: center;
-      position: relative;
     }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      margin: 10px auto 0;
-    }
-    .grid {
+
+    .card-grid {
       display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
     }
+
     .card {
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
       padding: 1.5rem;
-      transition: transform 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
+
     .card:hover {
       transform: translateY(-5px);
     }
-    .card h3 {
+
+    .team img {
+      width: 100%;
+      border-radius: 10px;
       margin-bottom: 1rem;
-      color: var(--secondary);
     }
+
     footer {
-      background: var(--primary);
+      background-color: #001f3f;
       color: #fff;
       text-align: center;
-      padding: 3rem 1rem;
-    }
-    form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    form input, form textarea {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-    form button {
-      background: var(--accent);
-      color: #000;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #72c9ff;
-    }
-    .highlight {
-      background: var(--accent);
       padding: 2rem;
-      color: #000;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     }
-    @media (max-width: 768px) {
-      .section-title { font-size: 1.8rem; }
+
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: #002244;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #00bcd4;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header class="fade-in">
     <img src="logo.png" alt="Dentastra Logo">
     <h1>Dentastra Solutions</h1>
-    <p>Streamlining Dental Revenue Cycle Management</p>
+    <p>Streamlining Revenue. Empowering Growth.</p>
   </header>
+
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#workflow">RCM Workflow</a>
+    <a href="#team">Team</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#blog">Blog</a>
+    <a href="#privacy">Privacy Policy</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <section id="about">
-    <h2 class="section-title">About Dentastra</h2>
-    <div class="highlight">
-      <p>Dentastra Solutions is dedicated to transforming dental revenue cycle operations by combining innovation with precision. Our expert team offers end-to-end support to dental practices, enabling them to increase collections, reduce denials, and maintain compliance with the latest healthcare regulations.</p>
-    </div>
+    <h2 class="section-title">About Us</h2>
+    <p>
+      Dentastra Solutions is a next-gen Dental Revenue Cycle Management company, empowering dental practices with strategic support, precision processing, and real-time revenue insights. Our goal is to maximize efficiency while minimizing errors and delays in the RCM lifecycle.
+    </p>
   </section>
+
   <section id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Insurance Verification</h3>
-        <p>Real-time eligibility checks and pre-authorizations to prevent delays in payment processing.</p>
-      </div>
-      <div class="card">
-        <h3>Claim Scrubbing</h3>
-        <p>Automated error detection in claims before submission, ensuring first-pass resolution success.</p>
-      </div>
-      <div class="card">
-        <h3>Payment Posting</h3>
-        <p>Accurate and prompt application of payments to patient accounts, with detailed reconciliation.</p>
-      </div>
-      <div class="card">
-        <h3>Denial Management</h3>
-        <p>Systematic tracking and recovery of denied claims through expert appeals and corrections.</p>
-      </div>
-      <div class="card">
-        <h3>Patient Billing</h3>
-        <p>Customized statements, automated reminders, and digital payment solutions for convenience.</p>
-      </div>
-      <div class="card">
-        <h3>Analytics & Reporting</h3>
-        <p>Advanced insights to monitor A/R days, collection rates, and drive continuous improvements.</p>
-      </div>
+    <div class="card-grid">
+      <div class="card">Claims Submission</div>
+      <div class="card">Eligibility Verification</div>
+      <div class="card">Payment Posting</div>
+      <div class="card">Denial Management</div>
+      <div class="card">Patient Billing</div>
+      <div class="card">Insurance Follow-Up</div>
     </div>
   </section>
+
   <section id="workflow">
-    <h2 class="section-title">Our RCM Workflow</h2>
-    <div class="grid">
+    <h2 class="section-title">Dental RCM Workflow</h2>
+    <div class="card-grid">
+      <div class="card">1. Patient Scheduling & Registration</div>
+      <div class="card">2. Insurance Eligibility & Verification</div>
+      <div class="card">3. Dental Coding & Charge Entry</div>
+      <div class="card">4. Claims Submission to Insurance</div>
+      <div class="card">5. Payment Posting & ERA Processing</div>
+      <div class="card">6. Denial Management & Appeals</div>
+      <div class="card">7. AR Follow-Up & Collections</div>
+      <div class="card">8. Revenue Reporting & Analytics</div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2 class="section-title">Meet the Team</h2>
+    <div class="card-grid team">
       <div class="card">
-        <h3>Step 1: Patient Onboarding</h3>
-        <p>Gather and verify patient demographics, insurance details, and consent forms digitally.</p>
+        <strong>Mehul Fulan</strong><br>
+        Founder & CEO<br>
+        <p>15+ years in healthcare RCM, passionate about dental revenue strategy and compliance.</p>
       </div>
       <div class="card">
-        <h3>Step 2: Eligibility Verification</h3>
-        <p>Confirm benefits, coverage limits, and co-payment responsibilities before the visit.</p>
+        <strong>Priya Sharma</strong><br>
+        Operations Manager<br>
+        <p>Expert in dental billing systems and multi-clinic revenue coordination.</p>
       </div>
       <div class="card">
-        <h3>Step 3: Treatment Planning</h3>
-        <p>Ensure accurate coding and obtain pre-authorizations for planned dental procedures.</p>
-      </div>
-      <div class="card">
-        <h3>Step 4: Claim Submission</h3>
-        <p>Submit clean claims electronically with error-checking logic to minimize rejections.</p>
-      </div>
-      <div class="card">
-        <h3>Step 5: Payment Reconciliation</h3>
-        <p>Match remittances to claims and patient accounts with zero-tolerance for variance.</p>
-      </div>
-      <div class="card">
-        <h3>Step 6: Denial Appeals</h3>
-        <p>Resolve denied claims by analyzing root causes and submitting timely corrections.</p>
-      </div>
-      <div class="card">
-        <h3>Step 7: Collections Follow-Up</h3>
-        <p>Send patient statements and follow-up reminders for any outstanding balances.</p>
-      </div>
-      <div class="card">
-        <h3>Step 8: Monthly Reporting</h3>
-        <p>Review KPI dashboards like Net Collections, A/R aging, and claim turnaround times.</p>
+        <strong>Rahul Jain</strong><br>
+        Technology Lead<br>
+        <p>Leads automation in claims processing, payment integration, and HIPAA solutions.</p>
       </div>
     </div>
   </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="card-grid">
+      <div class="card">“Dentastra transformed our collections. Monthly revenue has never been better!” – Dr. Ahuja</div>
+      <div class="card">“Their team feels like an extension of our clinic. Efficient, precise, and responsive.” – SmileCare Dental</div>
+      <div class="card">“We recovered thousands in lost claims. Highly recommended!” – Brighton Dental</div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2 class="section-title">Insights & Blog</h2>
+    <div class="card-grid">
+      <div class="card">
+        <strong>5 KPIs Every Dental Office Should Track</strong>
+        <p>Discover essential revenue metrics for growth and compliance.</p>
+      </div>
+      <div class="card">
+        <strong>Common Coding Mistakes in Dental Billing</strong>
+        <p>Learn how to avoid denials and optimize claim approvals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <h2 class="section-title">Privacy Policy</h2>
+    <p>
+      Dentastra Solutions is committed to protecting the confidentiality of your health data and personal information. We follow strict HIPAA standards and never share your data without consent. For any privacy concerns, contact our compliance officer.
+    </p>
+  </section>
+
   <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <textarea placeholder="Your Message" rows="4" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
+
   <footer>
-    <p>&copy; 2025 Dentastra Solutions. All Rights Reserved.</p>
+    &copy; 2025 Dentastra Solutions. All rights reserved.
   </footer>
 </body>
 </html>
